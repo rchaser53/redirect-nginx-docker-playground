@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+  nginx:
+    image: 'nginx:1.15'
+    networks:
+      - nginx_node
+    restart: always
+    container_name: nginx
+    volumes:
+      - './nginx/conf.d/ssl.conf:/etc/nginx/conf.d/ssl.conf'
+      - './nginx/nginx.conf:/etc/nginx/nginx.conf'
+    ports:
+      - '3000:3000'
+
+  node:
+    networks:
+      - nginx_node
+    restart: always
+    command: bash setup.sh
+    container_name: node
+    image: 'node:11'
+    volumes:
+      - './example:/home/node'
+networks:
+  nginx_node:
+    external: true

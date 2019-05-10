@@ -16,9 +16,11 @@ services:
     networks:
       - nginx_node
     restart: always
-    command: bash setup.sh
+    # command: bash setup.sh
+    command: npm run start
     container_name: node
     image: 'node:11'
+    working_dir: /home/node
     volumes:
       - './example:/home/node'
 networks:

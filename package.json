@@ -1,0 +1,26 @@
+{
+  "name": "nginx-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchaser53/redirect-nginx-docker-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rchaser53/redirect-nginx-docker-playground/issues"
+  },
+  "homepage": "https://github.com/rchaser53/redirect-nginx-docker-playground#readme",
+  "dependencies": {
+    "websocket": "^1.0.28"
+  }
+}

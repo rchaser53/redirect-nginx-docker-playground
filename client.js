@@ -1,6 +1,10 @@
 const WebSocketClient = require('websocket').client;
 
-const client = new WebSocketClient();
+const client = new WebSocketClient({
+    tlsOptions: {
+        rejectUnauthorized: false
+    }
+});
 
 client.on('connectFailed', (error) => {
     console.log('Connect Error: ' + error.toString());
@@ -30,4 +34,4 @@ client.on('connect', (connection) => {
     sendNumber();
 });
 
-client.connect('ws://localhost:3000/', 'echo-protocol');
+client.connect('wss://localhost:3000/', 'echo-protocol');

@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/rchaser53/redirect-nginx-docker-playground#readme",
   "dependencies": {
+    "@types/websocket": "0.0.40",
     "websocket": "^1.0.28"
   }
 }

@@ -12,11 +12,6 @@ server.listen(3000, () => {
 
 wsServer = new WebSocketServer({
     httpServer: server,
-    // You should not use autoAcceptConnections for production
-    // applications, as it defeats all standard cross-origin protection
-    // facilities built into the protocol and the browser.  You should
-    // *always* verify the connection's origin and decide whether or not
-    // to accept it.
     autoAcceptConnections: false
 });
 
@@ -26,7 +21,6 @@ const originIsAllowed = (origin) => {
 
 wsServer.on('request', (request) => {
     if (!originIsAllowed(request.origin)) {
-      // Make sure we only accept requests from an allowed origin
       request.reject();
       console.log((new Date()) + ' Connection from origin ' + request.origin + ' rejected.');
       return;
